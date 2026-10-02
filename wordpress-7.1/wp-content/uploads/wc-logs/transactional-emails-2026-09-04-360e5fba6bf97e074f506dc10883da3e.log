@@ -1,0 +1,4 @@
+2026-09-04T06:23:35+00:00 INFO Email "admin_payment_gateway_enabled" sent CONTEXT: {"email_type":"admin_payment_gateway_enabled","status":"sent","recipient":"admin","WC_Gateway_BACS":null}
+2026-09-04T06:26:53+00:00 INFO Email "admin_payment_gateway_enabled" sent CONTEXT: {"email_type":"admin_payment_gateway_enabled","status":"sent","recipient":"admin","WC_Gateway_COD":null}
+2026-09-04T06:27:29+00:00 INFO Email "admin_payment_gateway_enabled" sent CONTEXT: {"email_type":"admin_payment_gateway_enabled","status":"sent","recipient":"admin","WC_Gateway_Cheque":null}
+2026-09-04T06:42:33+00:00 INFO Email "admin_payment_gateway_enabled" sent CONTEXT: {"email_type":"admin_payment_gateway_enabled","status":"sent","recipient":"admin","WC_Gateway_SePay":null}

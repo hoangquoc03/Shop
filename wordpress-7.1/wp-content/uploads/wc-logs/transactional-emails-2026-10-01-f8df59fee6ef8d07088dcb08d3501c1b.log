@@ -1,0 +1,6 @@
+2026-10-01T15:38:42+00:00 INFO Email "new_order" for order #115 sent CONTEXT: {"email_type":"new_order","status":"sent","recipient":"guest","order":115}
+2026-10-01T15:38:43+00:00 INFO Email "customer_on_hold_order" for order #115 sent CONTEXT: {"email_type":"customer_on_hold_order","status":"sent","recipient":"guest","order":115}
+2026-10-01T15:40:08+00:00 WARNING Email "cancelled_order" for order #115 failed to send: Không thể khởi tạo hàm thư. CONTEXT: {"email_type":"cancelled_order","status":"failed","recipient":"guest","order":115}
+2026-10-01T15:40:09+00:00 NOTICE Email "customer_cancelled_order" for order #115 not sent: email type is disabled CONTEXT: {"email_type":"customer_cancelled_order","status":"disabled","recipient":"guest","order":115}
+2026-10-01T16:05:14+00:00 INFO Email "new_order" for order #116 sent CONTEXT: {"email_type":"new_order","status":"sent","recipient":"guest","order":116}
+2026-10-01T16:05:14+00:00 INFO Email "customer_on_hold_order" for order #116 sent CONTEXT: {"email_type":"customer_on_hold_order","status":"sent","recipient":"admin","order":116}

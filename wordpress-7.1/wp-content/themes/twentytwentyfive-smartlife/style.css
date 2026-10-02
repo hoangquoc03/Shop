@@ -1,0 +1,159 @@
+/*
+Theme Name: Twenty Twenty-Five SmartLife
+Template: twentytwentyfive
+Version: 1.0.0
+Text Domain: twentytwentyfive-smartlife
+*/
+
+:root {
+  --smartlife-ink: #18322b;
+  --smartlife-leaf: #1e725b;
+  --smartlife-coral: #d76a4c;
+  --smartlife-mist: #edf4ef;
+  --smartlife-line: #d7e1da;
+}
+
+.smartlife-home-hero {
+  background: linear-gradient(115deg, #e5f0e9 0%, #f6eee2 100%);
+  color: var(--smartlife-ink);
+  padding: clamp(36px, 7vw, 88px);
+}
+
+.smartlife-home-hero h1 {
+  max-width: 760px;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 1.02;
+}
+
+.smartlife-eyebrow {
+  color: var(--smartlife-leaf);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.smartlife-primary-link {
+  background: var(--smartlife-leaf);
+  color: #fff;
+  display: inline-block;
+  margin: 12px 16px 12px 0;
+  padding: 12px 18px;
+  text-decoration: none;
+}
+
+.smartlife-home-hero small {
+  display: block;
+  margin-top: 14px;
+}
+
+.smartlife-home-categories {
+  padding: 36px 0;
+}
+
+.smartlife-category-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.smartlife-category-link {
+  border: 1px solid var(--smartlife-line);
+  color: var(--smartlife-ink);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 108px;
+  padding: 18px;
+  text-decoration: none;
+}
+
+.smartlife-category-link:hover {
+  border-color: var(--smartlife-leaf);
+  background: var(--smartlife-mist);
+}
+
+.smartlife-category-link span {
+  font-size: 0.86rem;
+}
+
+.smartlife-filters {
+  background: var(--smartlife-mist);
+  border: 1px solid var(--smartlife-line);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(5, minmax(130px, 1fr)) auto;
+  margin: 20px 0;
+  padding: 16px;
+}
+
+.smartlife-filters label {
+  color: var(--smartlife-ink);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  font-weight: 600;
+  gap: 5px;
+}
+
+.smartlife-filters input,
+.smartlife-filters select {
+  background: #fff;
+  border: 1px solid #9bad9f;
+  border-radius: 2px;
+  box-sizing: border-box;
+  min-height: 42px;
+  padding: 8px;
+  width: 100%;
+}
+
+.smartlife-filters button {
+  align-self: end;
+  background: var(--smartlife-leaf);
+  border: 0;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  min-height: 42px;
+  padding: 8px 16px;
+}
+
+.smartlife-filter-clear {
+  align-self: end;
+  color: var(--smartlife-ink);
+  min-height: 42px;
+  padding: 10px 4px;
+}
+
+.smartlife-product-policies {
+  background: var(--smartlife-mist);
+  border-left: 4px solid var(--smartlife-leaf);
+  margin: 18px 0;
+  padding: 16px 20px;
+}
+
+.smartlife-product-policies h2 {
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+}
+
+.smartlife-product-policies p {
+  margin: 6px 0;
+}
+
+@media (max-width: 900px) {
+  .smartlife-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .smartlife-category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .smartlife-filters,
+  .smartlife-category-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
