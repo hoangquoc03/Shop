@@ -1,2 +1,15 @@
 2026-10-02T06:16:17+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: hit Purchase
 2026-10-02T06:16:17+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: Missing option "access_token"
+2026-10-02T14:19:32+00:00 DEBUG tt4b_product_delete: missing access token for tt4b_product_sync
+2026-10-02T14:19:32+00:00 DEBUG tt4b_product_delete: missing access token for tt4b_product_sync
+2026-10-02T14:19:32+00:00 DEBUG tt4b_product_delete: missing access token for tt4b_product_sync
+2026-10-02T14:19:32+00:00 DEBUG tt4b_product_delete: missing access token for tt4b_product_sync
+2026-10-02T14:19:33+00:00 DEBUG tt4b_product_delete: missing access token for tt4b_product_sync
+2026-10-02T14:19:33+00:00 DEBUG tt4b_product_delete: missing access token for tt4b_product_sync
+2026-10-02T14:19:33+00:00 DEBUG tt4b_product_delete: missing access token for tt4b_product_sync
+2026-10-02T14:19:33+00:00 DEBUG tt4b_product_delete: missing access token for tt4b_product_sync
+2026-10-02T14:19:33+00:00 DEBUG tt4b_product_delete: missing access token for tt4b_product_sync
+2026-10-02T14:19:33+00:00 DEBUG tt4b_product_delete: missing access token for tt4b_product_sync
+2026-10-02T14:19:33+00:00 DEBUG tt4b_product_delete: missing access token for tt4b_product_sync
+2026-10-02T14:19:34+00:00 DEBUG tt4b_product_delete: missing access token for tt4b_product_sync
+2026-10-02T14:19:34+00:00 DEBUG tt4b_product_delete: missing access token for tt4b_product_sync

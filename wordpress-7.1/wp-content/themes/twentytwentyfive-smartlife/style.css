@@ -1,159 +1,1036 @@
 /*
 Theme Name: Twenty Twenty-Five SmartLife
 Template: twentytwentyfive
-Version: 1.0.0
+Version: 1.1.0
 Text Domain: twentytwentyfive-smartlife
 */
 
 :root {
-  --smartlife-ink: #18322b;
-  --smartlife-leaf: #1e725b;
-  --smartlife-coral: #d76a4c;
-  --smartlife-mist: #edf4ef;
-  --smartlife-line: #d7e1da;
+  --sl-ink: #17252b;
+  --sl-muted: #596a70;
+  --sl-paper: #ffffff;
+  --sl-canvas: #f4f7f6;
+  --sl-line: #dce5e4;
+  --sl-teal: #087e83;
+  --sl-teal-dark: #05656b;
+  --sl-coral: #c8644d;
+  --sl-lime: #d7e88b;
+  --sl-radius: 10px;
+  --sl-shadow: 0 14px 36px rgba(23, 37, 43, 0.08);
+  --sl-font: "Aptos", "Segoe UI", sans-serif;
+  --sl-display: "Bahnschrift", "Aptos Display", "Segoe UI", sans-serif;
 }
 
-.smartlife-home-hero {
-  background: linear-gradient(115deg, #e5f0e9 0%, #f6eee2 100%);
-  color: var(--smartlife-ink);
-  padding: clamp(36px, 7vw, 88px);
+html {
+  scroll-behavior: smooth;
 }
 
-.smartlife-home-hero h1 {
-  max-width: 760px;
-  font-size: clamp(2.4rem, 5vw, 4.8rem);
-  line-height: 1.02;
+body {
+  background: var(--sl-paper);
+  color: var(--sl-ink);
+  font-family: var(--sl-font);
+  line-height: 1.6;
 }
 
-.smartlife-eyebrow {
-  color: var(--smartlife-leaf);
-  font-size: 0.78rem;
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--sl-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+.wp-block-site-title {
+  color: var(--sl-ink);
+  font-family: var(--sl-display);
+  font-weight: 650;
+  line-height: 1.12;
+}
+
+a {
+  color: var(--sl-teal-dark);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--sl-coral);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--sl-coral);
+  outline-offset: 3px;
+}
+
+button,
+.button,
+.wp-element-button {
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+/* Header and navigation */
+.smartlife-header-shell {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  border-bottom: 1px solid rgba(220, 229, 228, 0.9);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 5px 18px rgba(23, 37, 43, 0.035);
+  backdrop-filter: blur(14px);
+}
+
+.smartlife-header-inner {
+  min-height: 86px;
+  gap: 22px;
+}
+
+.smartlife-brand {
+  min-width: 190px;
+}
+
+.smartlife-brand .wp-block-site-title {
+  margin: 0;
+  font-family: var(--sl-display);
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
-.smartlife-primary-link {
-  background: var(--smartlife-leaf);
-  color: #fff;
-  display: inline-block;
-  margin: 12px 16px 12px 0;
-  padding: 12px 18px;
+.smartlife-brand-note {
+  margin: 1px 0 0;
+  color: var(--sl-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.smartlife-main-nav .wp-block-navigation__container {
+  gap: 6px;
+}
+
+.smartlife-main-nav .wp-block-navigation-item__content,
+.smartlife-header-actions a {
+  border-radius: 5px;
+  color: var(--sl-ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 12px;
   text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.smartlife-main-nav .wp-block-navigation-item__content:hover,
+.smartlife-header-actions a:hover {
+  background: var(--sl-canvas);
+  color: var(--sl-teal-dark);
+}
+
+.smartlife-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.smartlife-header-actions .smartlife-header-cart {
+  border: 1px solid var(--sl-line);
+  border-radius: 5px;
+  color: var(--sl-teal-dark);
+}
+
+.smartlife-header-actions .smartlife-header-cart:hover {
+  border-color: var(--sl-teal);
+  background: var(--sl-teal);
+  color: #fff;
+}
+
+/* Homepage hero, categories and proof points */
+main.wp-block-group {
+  padding-top: 30px;
+}
+
+.home main.wp-block-group.is-layout-constrained > .wp-block-post-content {
+  width: 100%;
+  max-width: var(--wp--style--global--wide-size, 1200px);
+}
+
+.home .wp-block-post-content > * {
+  max-width: none;
+}
+
+.smartlife-home-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 390px;
+  overflow: hidden;
+  border: 1px solid var(--sl-line);
+  border-radius: var(--sl-radius);
+  background-color: var(--sl-canvas);
+  background-image: linear-gradient(
+    90deg,
+    #f4f7f6 0%,
+    #f4f7f6 52%,
+    rgba(244, 247, 246, 0.34) 100%
+  );
+  color: var(--sl-ink);
+  padding: 54px 60px;
+}
+
+.smartlife-home-hero::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(8, 126, 131, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8, 126, 131, 0.045) 1px, transparent 1px);
+  background-size: 34px 34px;
+  content: "";
+  mask-image: linear-gradient(90deg, #000 0%, transparent 73%);
+}
+
+.smartlife-home-hero::after {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: 4%;
+  width: 36%;
+  max-width: 390px;
+  aspect-ratio: 1;
+  background: url("../../uploads/smartlife-products/SL-CAM-0001.webp") center /
+    contain no-repeat;
+  content: "";
+  filter: drop-shadow(0 24px 30px rgba(23, 37, 43, 0.12));
+  transform: translateY(-50%);
+}
+
+.smartlife-home-hero > * {
+  position: relative;
+  z-index: 1;
+  max-width: 58%;
+}
+
+.smartlife-home-hero .smartlife-eyebrow {
+  margin: 0 0 14px;
+  color: var(--sl-teal-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.smartlife-home-hero h1 {
+  max-width: 670px;
+  margin: 0 0 18px;
+  font-size: 3.45rem;
+  line-height: 1.03;
+}
+
+.smartlife-home-hero > p:not(.smartlife-eyebrow) {
+  max-width: 520px;
+  margin: 0 0 14px;
+  color: var(--sl-muted);
+  font-size: 1.08rem;
+}
+
+.smartlife-primary-link,
+.smartlife-primary-link:visited,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.wp-block-button__link {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--sl-teal-dark);
+  border-radius: 5px;
+  background: var(--sl-teal-dark);
+  color: #fff;
+  font-size: 0.94rem;
+  font-weight: 700;
+  padding: 11px 20px;
+  text-decoration: none;
+}
+
+.smartlife-primary-link:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.wp-block-button__link:hover {
+  border-color: var(--sl-ink);
+  background: var(--sl-ink);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(23, 37, 43, 0.15);
+  transform: translateY(-2px);
 }
 
 .smartlife-home-hero small {
   display: block;
   margin-top: 14px;
+  color: var(--sl-muted);
+  font-size: 0.78rem;
 }
 
 .smartlife-home-categories {
-  padding: 36px 0;
+  padding: 54px 0 26px;
+}
+
+.smartlife-home-categories h2,
+.smartlife-featured-title {
+  margin: 0 0 22px;
+  font-size: 2rem;
 }
 
 .smartlife-category-grid {
   display: grid;
-  gap: 12px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .smartlife-category-link {
-  border: 1px solid var(--smartlife-line);
-  color: var(--smartlife-ink);
+  position: relative;
   display: flex;
+  min-height: 164px;
   flex-direction: column;
-  gap: 8px;
-  min-height: 108px;
-  padding: 18px;
+  justify-content: flex-end;
+  overflow: hidden;
+  border: 1px solid var(--sl-line);
+  border-radius: 8px;
+  background-color: #f7f9f8;
+  color: var(--sl-ink);
+  padding: 20px;
   text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
-.smartlife-category-link:hover {
-  border-color: var(--smartlife-leaf);
-  background: var(--smartlife-mist);
+.smartlife-category-link::before {
+  position: absolute;
+  top: 4px;
+  right: 9px;
+  width: 112px;
+  height: 112px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  opacity: 0.94;
+  transition: transform 240ms ease;
+}
+
+.smartlife-category-link:nth-child(1)::before {
+  background-image: url("../../uploads/smartlife-products/SL-BULB-0001.webp");
+}
+.smartlife-category-link:nth-child(2)::before {
+  background-image: url("../../uploads/smartlife-products/SL-CAM-0001.webp");
+}
+.smartlife-category-link:nth-child(3)::before {
+  background-image: url("../../uploads/smartlife-products/SL-SWITCH-0001.webp");
+}
+.smartlife-category-link:nth-child(4)::before {
+  background-image: url("../../uploads/smartlife-products/SL-ROBOT-0001.webp");
+}
+.smartlife-category-link:nth-child(5)::before {
+  background-image: url("../../uploads/smartlife-products/SL-MOTION-0001.webp");
+}
+.smartlife-category-link:nth-child(6)::before {
+  background-image: url("../../uploads/smartlife-products/SL-WIFI-0001.webp");
+}
+
+.smartlife-category-link::after {
+  position: absolute;
+  inset: 58px 0 0;
+  background: linear-gradient(180deg, rgba(247, 249, 248, 0), #f7f9f8 76%);
+  content: "";
+}
+
+.smartlife-category-link strong,
+.smartlife-category-link span {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+}
+
+.smartlife-category-link strong {
+  font-family: var(--sl-display);
+  font-size: 1.12rem;
+  line-height: 1.25;
 }
 
 .smartlife-category-link span {
-  font-size: 0.86rem;
+  margin-top: 5px;
+  color: var(--sl-muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
 }
 
-.smartlife-filters {
-  background: var(--smartlife-mist);
-  border: 1px solid var(--smartlife-line);
+.smartlife-category-link:hover {
+  border-color: var(--sl-teal);
+  box-shadow: var(--sl-shadow);
+  color: var(--sl-ink);
+  transform: translateY(-4px);
+}
+
+.smartlife-category-link:hover::before {
+  transform: scale(1.04);
+}
+
+/* Homepage products and all WooCommerce product grids */
+.smartlife-home-products,
+.woocommerce .products,
+.wc-block-grid__products,
+.wc-block-product-template {
+  gap: 18px;
+}
+
+.woocommerce ul.products,
+.wc-block-grid__products,
+.wc-block-product-template {
   display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.woocommerce ul.products::before,
+.woocommerce ul.products::after {
+  display: none;
+}
+
+.woocommerce ul.products li.product,
+.wc-block-grid__products .wc-block-grid__product,
+.wc-block-product-template > li {
+  display: flex;
+  width: auto;
+  min-width: 0;
+  flex-direction: column;
+  float: none;
+  overflow: hidden;
+  border: 1px solid var(--sl-line);
+  border-radius: 8px;
+  background: var(--sl-paper);
+  margin: 0;
+  padding: 12px;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.woocommerce ul.products li.product:hover,
+.wc-block-grid__products .wc-block-grid__product:hover,
+.wc-block-product-template > li:hover {
+  border-color: #b9d1d0;
+  box-shadow: var(--sl-shadow);
+  transform: translateY(-4px);
+}
+
+.woocommerce ul.products li.product a img,
+.wc-block-grid__products .wc-block-grid__product-image img,
+.wc-block-product-template .wc-block-components-product-image img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 5px;
+  background: var(--sl-canvas);
+  margin: 0 0 12px;
+  object-fit: contain;
+  transition: transform 260ms ease;
+}
+
+.woocommerce ul.products li.product:hover a img,
+.wc-block-grid__products .wc-block-grid__product:hover img,
+.wc-block-product-template > li:hover img {
+  transform: scale(1.025);
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.wc-block-grid__products .wc-block-grid__product-title,
+.wc-block-product-template .wp-block-post-title {
+  color: var(--sl-ink);
+  font-family: var(--sl-display);
+  font-size: 1.02rem;
+  font-weight: 650;
+  line-height: 1.3;
+  padding: 0;
+}
+
+.woocommerce ul.products li.product .price,
+.wc-block-grid__products .wc-block-grid__product-price,
+.wc-block-product-template .wp-block-woocommerce-product-price {
+  color: var(--sl-teal-dark);
+  font-size: 1.08rem;
+  font-weight: 750;
+  margin: 8px 0 14px;
+}
+
+.woocommerce ul.products li.product a.button,
+.woocommerce ul.products li.product .added_to_cart,
+.wc-block-grid__products .wp-block-button__link,
+.wc-block-product-template .wp-block-button__link {
+  width: 100%;
+  min-height: 44px;
+  margin-top: auto;
+  padding: 9px 12px;
+  text-align: center;
+}
+
+.woocommerce span.onsale,
+.wc-block-grid__product-onsale {
+  z-index: 2;
+  min-height: 0;
+  border-radius: 3px;
+  background: var(--sl-coral);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 6px 9px;
+}
+
+/* Product archives and filters */
+.smartlife-filters {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
-  grid-template-columns: repeat(5, minmax(130px, 1fr)) auto;
-  margin: 20px 0;
-  padding: 16px;
+  border: 1px solid var(--sl-line);
+  border-radius: 8px;
+  background: var(--sl-canvas);
+  margin: 24px 0 32px;
+  padding: 18px;
 }
 
 .smartlife-filters label {
-  color: var(--smartlife-ink);
   display: flex;
+  min-width: 0;
   flex-direction: column;
-  font-size: 0.85rem;
-  font-weight: 600;
   gap: 5px;
+  color: var(--sl-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
 }
 
 .smartlife-filters input,
-.smartlife-filters select {
-  background: #fff;
-  border: 1px solid #9bad9f;
-  border-radius: 2px;
+.smartlife-filters select,
+.woocommerce .quantity .qty,
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select {
   box-sizing: border-box;
-  min-height: 42px;
-  padding: 8px;
   width: 100%;
+  min-height: 44px;
+  border: 1px solid #c7d4d4;
+  border-radius: 5px;
+  background: #fff;
+  color: var(--sl-ink);
+  padding: 9px 11px;
 }
 
 .smartlife-filters button {
   align-self: end;
-  background: var(--smartlife-leaf);
-  border: 0;
-  border-radius: 2px;
+  min-height: 44px;
+  border: 1px solid var(--sl-teal-dark);
+  border-radius: 5px;
+  background: var(--sl-teal-dark);
   color: #fff;
   cursor: pointer;
   font: inherit;
+  font-size: 0.9rem;
   font-weight: 700;
-  min-height: 42px;
   padding: 8px 16px;
+}
+
+.smartlife-filters button:hover {
+  background: var(--sl-ink);
+  transform: translateY(-1px);
 }
 
 .smartlife-filter-clear {
   align-self: end;
-  color: var(--smartlife-ink);
-  min-height: 42px;
+  min-height: 44px;
+  color: var(--sl-teal-dark);
+  font-size: 0.9rem;
+  font-weight: 650;
   padding: 10px 4px;
 }
 
+body.woocommerce .content-area main.site-main > .woocommerce-breadcrumb,
+body.woocommerce .content-area main.site-main > .woocommerce-products-header {
+  display: none;
+}
+
+.woocommerce .woocommerce-breadcrumb {
+  color: var(--sl-muted);
+  font-size: 0.82rem;
+  margin: 8px 0 20px;
+}
+
+.woocommerce .woocommerce-result-count,
+.woocommerce .woocommerce-ordering {
+  color: var(--sl-muted);
+  font-size: 0.88rem;
+}
+
+/* Product detail */
+body.single-product .woocommerce div.product {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: start;
+  gap: 42px;
+}
+
+body.single-product .woocommerce div.product::before,
+body.single-product .woocommerce div.product::after {
+  display: none;
+}
+
+body.single-product .woocommerce div.product div.images,
+body.single-product .woocommerce div.product div.summary {
+  width: auto;
+  float: none;
+  margin: 0;
+}
+
+body.single-product .woocommerce div.product div.images {
+  overflow: hidden;
+  border: 1px solid var(--sl-line);
+  border-radius: 8px;
+  background: var(--sl-canvas);
+  padding: 16px;
+}
+
+body.single-product .woocommerce div.product div.images img {
+  border-radius: 5px;
+}
+
+body.single-product .product_title {
+  margin: 0 0 15px;
+  font-size: 2.25rem;
+  line-height: 1.1;
+}
+
+body.single-product .summary .price {
+  color: var(--sl-teal-dark);
+  font-size: 1.75rem;
+  font-weight: 750;
+}
+
+body.single-product .summary .stock {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  background: #eef6e7;
+  color: #386b34;
+  font-size: 0.86rem;
+  font-weight: 700;
+  padding: 6px 9px;
+}
+
+body.single-product .woocommerce div.product form.cart {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+body.single-product .woocommerce .quantity .qty {
+  width: 82px;
+  min-height: 48px;
+}
+
 .smartlife-product-policies {
-  background: var(--smartlife-mist);
-  border-left: 4px solid var(--smartlife-leaf);
-  margin: 18px 0;
-  padding: 16px 20px;
+  border: 1px solid var(--sl-line);
+  border-left: 3px solid var(--sl-teal);
+  border-radius: 0 6px 6px 0;
+  background: var(--sl-canvas);
+  margin: 24px 0;
+  padding: 17px 19px;
 }
 
 .smartlife-product-policies h2 {
-  font-size: 1.1rem;
-  margin: 0 0 8px;
+  margin: 0 0 9px;
+  font-family: var(--sl-display);
+  font-size: 1rem;
 }
 
 .smartlife-product-policies p {
   margin: 6px 0;
+  color: var(--sl-muted);
+  font-size: 0.88rem;
 }
 
-@media (max-width: 900px) {
+body.single-product .woocommerce-tabs {
+  margin-top: 54px;
+}
+
+body.single-product .woocommerce-tabs ul.tabs {
+  border-bottom: 1px solid var(--sl-line);
+  padding-left: 0;
+}
+
+body.single-product .woocommerce-tabs ul.tabs li {
+  border-color: var(--sl-line);
+  border-radius: 5px 5px 0 0;
+  background: var(--sl-canvas);
+}
+
+/* Cart and checkout presentation only; keep WooCommerce controls and gateways intact. */
+.wp-block-woocommerce-cart,
+.wp-block-woocommerce-checkout,
+.woocommerce-cart .woocommerce,
+.woocommerce-checkout .woocommerce {
+  color: var(--sl-ink);
+}
+
+.wp-block-woocommerce-cart .wc-block-cart,
+.wp-block-woocommerce-checkout .wc-block-checkout {
+  gap: 28px;
+}
+
+.wc-block-components-order-summary,
+.wc-block-checkout__sidebar,
+.wc-block-cart__main,
+.woocommerce-cart-form,
+.woocommerce-checkout #order_review,
+.woocommerce-checkout #payment {
+  border-color: var(--sl-line);
+  border-radius: 8px;
+}
+
+.wc-block-components-radio-control .wc-block-components-radio-control__option,
+.woocommerce-checkout #payment ul.payment_methods li {
+  border-color: var(--sl-line);
+}
+
+.wc-block-components-radio-control
+  .wc-block-components-radio-control__option-checked,
+.woocommerce-checkout #payment ul.payment_methods li:has(input:checked) {
+  border-color: var(--sl-teal);
+  box-shadow: 0 0 0 1px var(--sl-teal);
+}
+
+.wc-block-components-checkout-place-order-button,
+.woocommerce-checkout #place_order,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+  min-height: 50px;
+  border: 0;
+  border-radius: 5px;
+  background: var(--sl-teal-dark);
+  color: #fff;
+  font-weight: 750;
+}
+
+.wc-block-components-checkout-place-order-button:hover,
+.woocommerce-checkout #place_order:hover,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover {
+  background: var(--sl-ink);
+  transform: translateY(-1px);
+}
+
+button:disabled,
+button[disabled],
+.button:disabled,
+.button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+/* Store footer */
+.smartlife-footer {
+  margin-top: 80px;
+  border-top: 1px solid var(--sl-line);
+  background: var(--sl-canvas);
+  padding: 46px 0 22px;
+}
+
+.smartlife-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 36px;
+}
+
+.smartlife-footer-brand {
+  max-width: 310px;
+}
+
+.smartlife-footer-brand .wp-block-site-title {
+  margin: 0 0 10px;
+  font-size: 1.35rem;
+}
+
+.smartlife-footer-brand p,
+.smartlife-footer-note {
+  color: var(--sl-muted);
+  font-size: 0.86rem;
+}
+
+.smartlife-footer-heading {
+  margin: 0 0 12px;
+  color: var(--sl-ink);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.smartlife-footer-links {
+  display: grid;
+  gap: 8px;
+}
+
+.smartlife-footer-links a {
+  color: var(--sl-muted);
+  font-size: 0.88rem;
+  text-decoration: none;
+}
+
+.smartlife-footer-links a:hover {
+  color: var(--sl-teal-dark);
+}
+
+.smartlife-footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid var(--sl-line);
+  margin-top: 32px;
+  padding-top: 15px;
+}
+
+.smartlife-footer-bottom p {
+  margin: 0;
+  color: var(--sl-muted);
+  font-size: 0.76rem;
+}
+
+/* Light reveal and interaction motion */
+@keyframes smartlife-rise-in {
+  from {
+    opacity: 0.35;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .smartlife-home-categories,
+  .smartlife-benefits,
+  .smartlife-home-cta {
+    animation: smartlife-rise-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 28%;
+  }
+}
+
+@media (max-width: 920px) {
+  .smartlife-header-inner {
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+  }
+
+  .smartlife-main-nav {
+    order: 3;
+    width: 100%;
+  }
+
+  .smartlife-main-nav .wp-block-navigation__container {
+    justify-content: flex-start;
+  }
+
+  .smartlife-category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .woocommerce ul.products,
+  .wc-block-grid__products,
+  .wc-block-product-template {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .smartlife-filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  main.wp-block-group {
+    padding-top: 18px;
+  }
+
+  .smartlife-header-inner {
+    min-height: 0;
+  }
+
+  .smartlife-brand {
+    min-width: 0;
+  }
+
+  .smartlife-main-nav .wp-block-navigation__container {
+    gap: 2px;
+  }
+
+  .smartlife-main-nav .wp-block-navigation-item__content {
+    font-size: 0.82rem;
+    padding: 8px;
+  }
+
+  .smartlife-home-hero {
+    min-height: 0;
+    align-items: flex-start;
+    background-image: linear-gradient(
+      180deg,
+      rgba(244, 247, 246, 0.88),
+      #f4f7f6 72%
+    );
+    padding: 28px 22px 210px;
+  }
+
+  .smartlife-home-hero::before {
+    mask-image: linear-gradient(180deg, #000 0%, transparent 72%);
+  }
+
+  .smartlife-home-hero::after {
+    top: auto;
+    right: 50%;
+    bottom: -25px;
+    width: 210px;
+    transform: translateX(50%);
+  }
+
+  .smartlife-home-hero > * {
+    max-width: 100%;
+  }
+
+  .smartlife-home-hero h1 {
+    max-width: 100%;
+    font-size: 2.45rem;
+  }
+
+  .smartlife-home-categories {
+    padding: 38px 0 18px;
+  }
+
+  .smartlife-home-categories h2,
+  .smartlife-featured-title {
+    font-size: 1.65rem;
+  }
+
+  .smartlife-category-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .smartlife-category-link {
+    min-height: 142px;
+  }
+
+  .woocommerce ul.products,
+  .wc-block-grid__products,
+  .wc-block-product-template {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .woocommerce ul.products li.product,
+  .wc-block-grid__products .wc-block-grid__product,
+  .wc-block-product-template > li {
+    padding: 8px;
+  }
+
+  .woocommerce ul.products li.product .woocommerce-loop-product__title,
+  .wc-block-grid__products .wc-block-grid__product-title,
+  .wc-block-product-template .wp-block-post-title {
+    font-size: 0.92rem;
+  }
+
   .smartlife-filters {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    padding: 12px;
   }
 
-  .smartlife-category-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  body.single-product .woocommerce div.product {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+
+  body.single-product .product_title {
+    font-size: 1.85rem;
+  }
+
+  body.single-product .summary .price {
+    font-size: 1.5rem;
+  }
+
+  .smartlife-benefit-grid,
+  .smartlife-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .smartlife-benefits {
+    padding: 26px 20px;
+  }
+
+  .smartlife-home-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .smartlife-footer {
+    margin-top: 48px;
+    padding-top: 32px;
+  }
+
+  .wc-block-cart,
+  .wc-block-checkout {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
-@media (max-width: 520px) {
-  .smartlife-filters,
-  .smartlife-category-grid {
+@media (max-width: 380px) {
+  .smartlife-filters {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .smartlife-header-actions a {
+    font-size: 0.78rem;
+    padding: 7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

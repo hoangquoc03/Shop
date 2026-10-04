@@ -1,0 +1,50 @@
+2026-10-04T04:35:37+00:00 DEBUG Tt4b_Pixel_Class::inject_add_to_cart_event: hit AddToCart
+2026-10-04T04:35:37+00:00 DEBUG Tt4b_Pixel_Class::inject_add_to_cart_event: Missing option "access_token"
+2026-10-04T04:36:12+00:00 DEBUG Tt4b_Pixel_Class::inject_initiate_checkout_event: hit InitiateCheckout
+2026-10-04T04:36:12+00:00 DEBUG Tt4b_Pixel_Class::inject_initiate_checkout_event: Missing option "access_token"
+2026-10-04T04:38:26+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: hit Purchase
+2026-10-04T04:38:26+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: Missing option "access_token"
+2026-10-04T04:47:46+00:00 DEBUG Tt4b_Pixel_Class::inject_add_to_cart_event: hit AddToCart
+2026-10-04T04:47:46+00:00 DEBUG Tt4b_Pixel_Class::inject_add_to_cart_event: Missing option "access_token"
+2026-10-04T04:49:10+00:00 DEBUG Tt4b_Pixel_Class::inject_initiate_checkout_event: hit InitiateCheckout
+2026-10-04T04:49:10+00:00 DEBUG Tt4b_Pixel_Class::inject_initiate_checkout_event: Missing option "access_token"
+2026-10-04T04:50:10+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: hit Purchase
+2026-10-04T04:50:10+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: Missing option "access_token"
+2026-10-04T04:52:39+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: hit Purchase
+2026-10-04T04:52:39+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: Missing option "access_token"
+2026-10-04T05:47:44+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: hit Purchase
+2026-10-04T05:47:44+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: Missing option "access_token"
+2026-10-04T05:48:08+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: hit Purchase
+2026-10-04T05:48:08+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: Missing option "access_token"
+2026-10-04T05:48:15+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: hit Purchase
+2026-10-04T05:48:15+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: Missing option "access_token"
+2026-10-04T05:49:16+00:00 DEBUG Tt4b_Pixel_Class::inject_add_to_cart_event: hit AddToCart
+2026-10-04T05:49:16+00:00 DEBUG Tt4b_Pixel_Class::inject_add_to_cart_event: Missing option "access_token"
+2026-10-04T05:49:25+00:00 DEBUG Tt4b_Pixel_Class::inject_initiate_checkout_event: hit InitiateCheckout
+2026-10-04T05:49:25+00:00 DEBUG Tt4b_Pixel_Class::inject_initiate_checkout_event: Missing option "access_token"
+2026-10-04T05:49:46+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: hit Purchase
+2026-10-04T05:49:46+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: Missing option "access_token"
+2026-10-04T05:52:12+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: hit Purchase
+2026-10-04T05:52:12+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: Missing option "access_token"
+2026-10-04T05:54:45+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: hit Purchase
+2026-10-04T05:54:45+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: Missing option "access_token"
+2026-10-04T05:54:51+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: hit Purchase
+2026-10-04T05:54:51+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: Missing option "access_token"
+2026-10-04T06:29:54+00:00 DEBUG Tt4b_Pixel_Class::inject_view_content_event: hit ViewContent
+2026-10-04T06:29:54+00:00 DEBUG Tt4b_Pixel_Class::inject_view_content_event: Missing option "access_token"
+2026-10-04T06:40:09+00:00 DEBUG Tt4b_Pixel_Class::inject_view_content_event: hit ViewContent
+2026-10-04T06:40:09+00:00 DEBUG Tt4b_Pixel_Class::inject_view_content_event: Missing option "access_token"
+2026-10-04T06:41:26+00:00 DEBUG Tt4b_Pixel_Class::inject_view_content_event: hit ViewContent
+2026-10-04T06:41:26+00:00 DEBUG Tt4b_Pixel_Class::inject_view_content_event: Missing option "access_token"
+2026-10-04T06:42:05+00:00 DEBUG Tt4b_Pixel_Class::inject_add_to_cart_event: hit AddToCart
+2026-10-04T06:42:05+00:00 DEBUG Tt4b_Pixel_Class::inject_add_to_cart_event: Missing option "access_token"
+2026-10-04T06:42:06+00:00 DEBUG Tt4b_Pixel_Class::inject_view_content_event: hit ViewContent
+2026-10-04T06:42:06+00:00 DEBUG Tt4b_Pixel_Class::inject_view_content_event: Missing option "access_token"
+2026-10-04T06:42:58+00:00 DEBUG Tt4b_Pixel_Class::inject_initiate_checkout_event: hit InitiateCheckout
+2026-10-04T06:42:58+00:00 DEBUG Tt4b_Pixel_Class::inject_initiate_checkout_event: Missing option "access_token"
+2026-10-04T06:44:21+00:00 DEBUG Tt4b_Pixel_Class::inject_initiate_checkout_event: hit InitiateCheckout
+2026-10-04T06:44:21+00:00 DEBUG Tt4b_Pixel_Class::inject_initiate_checkout_event: Missing option "access_token"
+2026-10-04T06:46:00+00:00 DEBUG Tt4b_Pixel_Class::inject_initiate_checkout_event: hit InitiateCheckout
+2026-10-04T06:46:00+00:00 DEBUG Tt4b_Pixel_Class::inject_initiate_checkout_event: Missing option "access_token"
+2026-10-04T06:46:51+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: hit Purchase
+2026-10-04T06:46:51+00:00 DEBUG Tt4b_Pixel_Class::inject_purchase_event: Missing option "access_token"

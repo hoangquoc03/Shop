@@ -111,9 +111,6 @@ function sl11_theme_payment_gateways($gateways)
     if (!is_array($gateways)) {
         return $gateways;
     }
-    if (sl11_theme_is_local()) {
-        unset($gateways['sepay']);
-    }
     $labels = array(
         'bacs' => 'Chuyển khoản ngân hàng (demo, không phát sinh giao dịch)',
         'cheque' => 'Thanh toán demo/offline',
